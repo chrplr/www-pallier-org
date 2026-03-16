@@ -1,0 +1,7 @@
+root {
+    --MENU-HEADER-BG-color: #2980b9;    /* RTD Blue */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #2471a3;
+    --MENU-SECTIONS-BG-color: #34495e;  /* Dark Sidebar */
+    --MAIN-LINK-color: #2980b9;
+    --MAIN-ANCHOR-color: #2980b9;
+}

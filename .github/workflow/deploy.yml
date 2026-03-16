@@ -1,0 +1,56 @@
+name: Build and Deploy Hybrid Site
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if your default branch is named 'master'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # Ensures the Relearn theme is pulled in
+
+      # 1. Setup Python for Sphinx
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 2. Install Sphinx, Theme, and LaTeX for high-quality PDFs
+      - name: Install Sphinx and TeX Live
+        run: |
+          pip install sphinx sphinx_rtd_theme
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            texlive-latex-extra \
+            texlive-lang-all \
+            latexmk
+
+      # 3. Setup Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      # 4. Build everything using the Root Makefile
+      # This builds the Sphinx HTML/PDF, moves them to static/docs, 
+      # and then runs the Hugo build.
+      - name: Execute Full Build
+        run: make all
+
+      # 5. Deploy the resulting 'public' folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./hugo-site/public

@@ -1,0 +1,36 @@
+baseURL = 'https://www.pallier.org/'
+languageCode = 'en-us'
+title = 'Christophe Pallier website'
+theme = 'hugo-theme-relearn'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+    name = "Documentation"
+    url = "/docs/"
+    weight = 20
+
+[[menu.main]]
+    name = "Download PDF"
+    url = "/docs/manual.pdf"
+    weight = 30
+
+theme = "hugo-theme-relearn"
+
+[params]
+[params]
+  themeVariant = "mine"
+  # Optional: Relearn specific settings
+  editURL = "https://github.com/youruser/yourrepo/edit/main/hugo-site/content/"
+  showBreadcrumbs = true
+
+[[menu.shortcuts]]
+  name = "<i class='fas fa-fw fa-file-pdf'></i> Download PDF Manual"
+  url = "/docs/manual.pdf"
+  weight = 10
+
+[[menu.shortcuts]]
+  name = "<i class='fas fa-fw fa-external-link-alt'></i> Sphinx Technical Docs"
+  url = "/docs/index.html"
+  weight = 20
