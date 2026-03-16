@@ -11,6 +11,11 @@ theme = 'hugo-theme-relearn'
     url = "/docs/"
     weight = 20
 
+# [[menu.main]]
+#   name = "Documentation 2"
+#   url = "/docs2-sphinx/"
+#   weight = 20
+
 [[menu.main]]
     name = "Download PDF"
     url = "/docs/manual.pdf"

@@ -1,6 +1,10 @@
-# Root Makefile
+# Root Makefile (Multi-project version)
 
-.PHONY: help docs site all clean serve
+# List all folders ending in -sphinx
+SPHINX_PROJECTS = $(wildcard *-sphinx)
+HUGO_STATIC = hugo-site/static
+
+.PHONY: help all docs site clean serve
 
 help:
 	@echo "Usage:"
@@ -9,31 +13,25 @@ help:
 	@echo "  make all     - Build everything"
 	@echo "  make serve   - Run Hugo local server"
 
-# 1. Build Sphinx and move to Hugo's static folder
-docs:
-	$(MAKE) -C docs-sphinx all
 
-# 2. Build the final Hugo site (outputs to hugo-site/public)
+all: docs site
+
+# Loop through each sphinx project and run its internal Makefile
+docs:
+	@for dir in $(SPHINX_PROJECTS); do \
+		echo "Building $$dir..."; \
+		$(MAKE) -C $$dir html latexpdf; \
+		mkdir -p $(HUGO_STATIC)/$$dir; \
+		cp -r $$dir/_build/html/* $(HUGO_STATIC)/$$dir/; \
+		cp $$dir/_build/latex/*.pdf $(HUGO_STATIC)/$$dir/manual.pdf; \
+	done
+
 site:
 	cd hugo-site && hugo
 
-# 3. Full build sequence
-all: docs site
-
-# 4. Local development: build docs then serve Hugo
 serve: docs
 	cd hugo-site && hugo server
 
-
 clean:
-	@echo "Cleaning up all build artifacts..."
-	# Clean Sphinx
-	$(MAKE) -C docs-sphinx clean
-	# Clean Hugo
-	rm -rf hugo-site/public
-	rm -rf hugo-site/resources
-	# Clean synced docs in static
-	rm -rf hugo-site/static/docs/*
-	# Restore the .gitkeep so the directory remains in git
-	touch hugo-site/static/docs/.gitkeep
-	@echo "All clean."
+	@for dir in $(SPHINX_PROJECTS); do $(MAKE) -C $$dir clean; done
+	rm -rf hugo-site/public $(HUGO_STATIC)/*-sphinx
