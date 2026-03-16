@@ -1,0 +1,19 @@
+/* Change the top-left logo area to match Hugo */
+.wy-side-nav-search {
+    background-color: #2980b9 !important;
+}
+
+/* Change the sidebar background */
+.wy-nav-side {
+    background: #34495e !important;
+}
+
+/* Change link colors */
+a {
+    color: #2980b9;
+}
+
+.wy-menu-vertical li.current a {
+    background: #e3e3e3;
+    color: #404040;
+}

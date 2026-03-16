@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome :: Christophe Pallier website</title>
+    <link>https://www.pallier.org/index.html</link>
+    <description>Welcome to the Project Portal This is the main site built with Hugo.&#xA;Quick Links View Technical Documentation Download the PDF Manual Use the sidebar on the left to navigate the site.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://www.pallier.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Overview</title>
+      <link>https://www.pallier.org/overview/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.pallier.org/overview/index.html</guid>
+      <description>What is this project? This project combines the speed of Hugo for the marketing/landing pages and the power of Sphinx for technical RST-based documentation.&#xA;Why two engines? Hugo: Fast, great for blogs and landing pages. Sphinx: Best-in-class for LaTeX PDF generation and technical cross-references.</description>
+    </item>
+  </channel>
+</rss>
