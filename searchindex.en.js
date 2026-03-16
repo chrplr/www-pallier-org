@@ -5,7 +5,7 @@ var relearn_searchindex = [
     "description": "What is this project? This project combines the speed of Hugo for the marketing/landing pages and the power of Sphinx for technical RST-based documentation.\nWhy two engines? Hugo: Fast, great for blogs and landing pages. Sphinx: Best-in-class for LaTeX PDF generation and technical cross-references.",
     "tags": [],
     "title": "Project Overview",
-    "uri": "/overview/index.html"
+    "uri": "/chrplr.github.io/www-pallier-org/overview/index.html"
   },
   {
     "breadcrumb": "Welcome",
@@ -13,7 +13,7 @@ var relearn_searchindex = [
     "description": "",
     "tags": [],
     "title": "Categories",
-    "uri": "/categories/index.html"
+    "uri": "/chrplr.github.io/www-pallier-org/categories/index.html"
   },
   {
     "breadcrumb": "Welcome",
@@ -21,7 +21,7 @@ var relearn_searchindex = [
     "description": "",
     "tags": [],
     "title": "Tags",
-    "uri": "/tags/index.html"
+    "uri": "/chrplr.github.io/www-pallier-org/tags/index.html"
   },
   {
     "breadcrumb": "",
@@ -29,6 +29,6 @@ var relearn_searchindex = [
     "description": "Welcome to the Project Portal This is the main site built with Hugo.\nQuick Links View Technical Documentation Download the PDF Manual Use the sidebar on the left to navigate the site.",
     "tags": [],
     "title": "Welcome",
-    "uri": "/index.html"
+    "uri": "/chrplr.github.io/www-pallier-org/index.html"
   }
 ]
