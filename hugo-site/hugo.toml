@@ -1,10 +1,12 @@
-baseURL = 'https://www.pallier.org/'
+baseURL = 'https:/chrplr.github.io/www-pallier-org/'
 languageCode = 'en-us'
 title = 'Christophe Pallier website'
 theme = 'hugo-theme-relearn'
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ['html', 'rss', 'print']
+  page = ['html', 'print']
+  section = ['html', 'rss', 'print']
 
 [[menu.main]]
     name = "Documentation"
