@@ -45,9 +45,6 @@ html_context = {
     "conf_py_path": "/docs-sphinx/", # Path in the checkout to the docs root
 }
 
-[params]
-  # Link to the root of your repo
-  editURL = "https://github.com/chrplr/www-pallier-org/edit/main/hugo-site/content/"
 
 def setup(app):
     app.add_css_file('custom.css')

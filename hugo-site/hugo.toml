@@ -19,10 +19,10 @@ theme = 'hugo-theme-relearn'
 theme = "hugo-theme-relearn"
 
 [params]
-[params]
+  # Link to the root of your rep
+  editURL = "https://github.com/chrplr/www-pallier-org/edit/main/hugo-site/content/"
   themeVariant = "mine"
   # Optional: Relearn specific settings
-  editURL = "https://github.com/youruser/yourrepo/edit/main/hugo-site/content/"
   showBreadcrumbs = true
 
 [[menu.shortcuts]]
